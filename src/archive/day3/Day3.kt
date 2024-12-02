@@ -1,4 +1,4 @@
-package day3
+package archive.day3
 
 import println
 import readInput
