@@ -3,13 +3,11 @@ package year2024
 import common.AbstractExecutor
 import common.Day
 import common.ExecutingMode
-import year2024.challenges.Day01
-import year2024.challenges.Day02
-import year2024.challenges.Day03
+import year2024.challenges.*
 
 object Executor : AbstractExecutor() {
 	override val challenges: List<Day<*, *>>
-		get() = listOf(Day01(), Day02(),Day03())
+		get() = listOf(Day01(), Day02(),Day03(),Day04(), Day05())
 
 	override val executingMode: ExecutingMode
 		get() = ExecutingMode.ExecuteLast

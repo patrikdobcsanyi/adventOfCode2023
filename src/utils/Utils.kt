@@ -1,6 +1,6 @@
-
+package utils
 import archive.day10.PipeType
-import utils.Point
+import utils.Direction.*
 import java.lang.Integer.*
 import java.math.BigInteger
 import java.security.MessageDigest
@@ -71,6 +71,23 @@ fun getCharDiffsForLists(first:List<String>, second:List<String>):Int{
     return sum
 }
 
+enum class DirectionsIncludingDiagonal{
+    N,W,S,O,NW,NO,SO,SW;
+
+    fun getOpposite(): DirectionsIncludingDiagonal {
+        return when(this){
+            N -> S
+            S -> N
+            O -> W
+            W -> O
+            NW -> SO
+            NO -> SW
+            SW -> NO
+            SO -> NW
+        }
+    }
+}
+
 enum class Direction{
     NORTH,
     SOUTH,
@@ -78,10 +95,10 @@ enum class Direction{
     WEST;
 
     fun isHorizontal():Boolean{
-        return this == EAST||this == WEST
+        return this == EAST ||this == WEST
     }
     fun isFromNorthOrWest():Boolean{
-        return this == NORTH||this == WEST
+        return this == NORTH ||this == WEST
     }
     fun nextPoint(point: Point):Point{
         when(this){
@@ -91,7 +108,7 @@ enum class Direction{
             WEST ->  return Point(point.x,point.y-1)
         }
     }
-    fun getOpposite():Direction{
+    fun getOpposite(): Direction {
        return when(this){
             NORTH -> SOUTH
             SOUTH -> NORTH
@@ -101,8 +118,8 @@ enum class Direction{
     }
     fun getTurnedDirections():List<Direction>{
         return when(this){
-            NORTH,SOUTH -> listOf(EAST,WEST)
-            EAST,WEST -> listOf(NORTH,SOUTH)
+            NORTH, SOUTH -> listOf(EAST, WEST)
+            EAST, WEST -> listOf(NORTH, SOUTH)
         }
     }
 
@@ -125,7 +142,11 @@ enum class Direction{
 }
 
 fun allNextPoints(point: Point):List<Point>{
-    return listOf(Direction.WEST.nextPoint(point),Direction.NORTH.nextPoint(point),Direction.EAST.nextPoint(point),Direction.SOUTH.nextPoint(point))
+    return listOf(
+        Direction.WEST.nextPoint(point),
+        Direction.NORTH.nextPoint(point),
+        Direction.EAST.nextPoint(point),
+        Direction.SOUTH.nextPoint(point))
 }
 fun areHorizontalNeighboursInGrid(point: Point,grid:MutableMap<Point,PipeType>):Boolean{
     return grid.containsKey(Point(point.x-1,point.y))|| grid.containsKey(Point(point.x+1,point.y))

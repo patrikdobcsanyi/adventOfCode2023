@@ -5,7 +5,7 @@ import common.Day
 
 class Day02 : Day<Int, Int>(day = 2, year = 2024) {
 	override fun part1(): Int {
-		return input.map { line -> line.split(" ") }.map { levels ->
+		return inputList.map { line -> line.split(" ") }.map { levels ->
 			val increasing = levels.first().toInt() < levels[1].toInt()
 			levels.map { it.toInt() }.zipWithNext { first, second ->
 				if (increasing) {
@@ -18,7 +18,7 @@ class Day02 : Day<Int, Int>(day = 2, year = 2024) {
 	}
 
 	override fun part2(): Int {
-		return input.map { line -> line.split(" ") }.map { levels ->
+		return inputList.map { line -> line.split(" ") }.map { levels ->
 			levels.mapIndexed { index, dropped ->
 				val mutableLevels = levels.toMutableList()
 				mutableLevels.removeAt(index)

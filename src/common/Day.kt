@@ -1,6 +1,7 @@
 package common
 
-import readInput
+import utils.readInput
+import utils.readInputAsText
 
 abstract class Day<T,S>(
 	val day:Int,
@@ -9,7 +10,8 @@ abstract class Day<T,S>(
 
 	override fun toString(): String = "Day: $day year: $year"
 
-	val input: List<String> = readInput("year$year/inputs/day${String.format("%02d",day)}")
+	val inputList: List<String> = readInput("year$year/inputs/day${String.format("%02d",day)}")
+	val inputAsText = readInputAsText("year$year/inputs/day${String.format("%02d",day)}")
 
 	abstract fun part1():T
 	abstract fun part2():S

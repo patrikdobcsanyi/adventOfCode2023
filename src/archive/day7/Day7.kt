@@ -1,7 +1,7 @@
 package archive.day7
 
-import println
-import readInput
+import utils.println
+import utils.readInput
 import java.util.SortedMap
 
 @OptIn(ExperimentalStdlibApi::class)

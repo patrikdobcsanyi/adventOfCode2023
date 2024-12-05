@@ -8,7 +8,7 @@ class Day01 : Day<Int, Int>(day = 1, year = 2024) {
 	override fun part1(): Int {
 		val firstList = mutableListOf<String>()
 		val secondList = mutableListOf<String>()
-		input.forEach {
+		inputList.forEach {
 			val line = it.split("   ")
 			firstList.add(line.first())
 			secondList.add(line[1])
@@ -25,7 +25,7 @@ class Day01 : Day<Int, Int>(day = 1, year = 2024) {
 	override fun part2(): Int {
 		val firstList = mutableListOf<String>()
 		val secondList = mutableListOf<String>()
-		input.forEach {
+		inputList.forEach {
 			val line = it.split("   ")
 			firstList.add(line.first())
 			secondList.add(line[1])

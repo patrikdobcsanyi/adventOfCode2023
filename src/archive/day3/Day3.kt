@@ -1,7 +1,7 @@
 package archive.day3
 
-import println
-import readInput
+import utils.println
+import utils.readInput
 
 fun main() {
 	val input = readInput("day3/input")

@@ -1,7 +1,7 @@
 package archive.day1
 
-import println
-import readInput
+import utils.println
+import utils.readInput
 
 fun main() {
 	fun part1(input: List<String>): Int {

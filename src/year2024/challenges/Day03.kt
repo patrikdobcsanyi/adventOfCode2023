@@ -6,7 +6,7 @@ class Day03 : Day<Long, Long>(day = 3, year = 2024) {
 	override fun part1(): Long {
 		var sol = 0L
 		val regex = """\bmul\((\d{1,3}),(\d{1,3})\)""".toRegex()
-		input.forEach {
+		inputList.forEach {
 			regex.findAll(it).forEach { matches ->
 				sol += matches.groupValues[1].toInt() * matches.groupValues[2].toInt()
 			}
@@ -19,7 +19,7 @@ class Day03 : Day<Long, Long>(day = 3, year = 2024) {
 		val regex = """\bmul\((\d{1,3}),(\d{1,3})\)""".toRegex()
 		val enabledRegex = """\bdo\(\)""".toRegex()
 		val disabledRegex = """\bdon't\(\)""".toRegex()
-		input.joinToString().also {
+		inputList.joinToString().also {
 			val enabledStrings = enabledRegex.findAll(it)
 			val disabledStrings = disabledRegex.findAll(it)
 			regex.findAll(it).forEach { matches ->
