@@ -1,8 +1,8 @@
 package archive.day5
 
-import println
-import readInput
-import readInputAsText
+import utils.println
+import utils.readInput
+import utils.readInputAsText
 
 data class Matching(val source: Long, val dest: Long, val range: Long) {
 	fun computeMap(value: Long): Long? {

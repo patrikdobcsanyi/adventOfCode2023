@@ -13,7 +13,6 @@ abstract class AbstractExecutor {
 			})
 			ExecutingMode.ExecuteLast -> runDay(challenges.last())
 		}
-		runDay(challenges.last())
 	}
 
 	private fun runDay(day: Day<*, *>) {

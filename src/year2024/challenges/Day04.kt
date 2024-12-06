@@ -3,7 +3,6 @@ package year2024.challenges
 import common.Day
 import utils.*
 
-typealias Dir = DirectionsIncludingDiagonal
 
 class Day04 : Day<Int, Int>(day = 4, year = 2024) {
 	enum class XmasChar {

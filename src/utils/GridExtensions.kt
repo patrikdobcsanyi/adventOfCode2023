@@ -2,14 +2,15 @@ package utils
 
 typealias Grid<T> = Map<Point, T>
 
+
 /**
  * Returns a list of points containing all 8 adjacent points, including diagonal
  */
 fun <T> Grid<T>.findAdjacentPoints(
 	point: Point,
 	direction: List<DirectionsIncludingDiagonal>,
-	length:Int,
-	height:Int
+	length: Int,
+	height: Int,
 ): Map<Pair<Point, DirectionsIncludingDiagonal>, T> {
 	val pointList = mutableListOf<Pair<Point, DirectionsIncludingDiagonal>>()
 	if (direction.contains(DirectionsIncludingDiagonal.S)) pointList.add(

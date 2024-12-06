@@ -9,7 +9,10 @@ class Point(x: Int, y: Int) : Point(x, y) {
 	}
 
 	override fun equals(other: Any?): Boolean {
-		return super.equals(other)
+		return if(other is Point){
+			other.x == x && other.y == y
+		} else false
+
 	}
 
 	operator fun plus(other: Point) = utils.Point(
@@ -36,6 +39,11 @@ class Point(x: Int, y: Int) : Point(x, y) {
 		DirectionsIncludingDiagonal.SO -> utils.Point(x+1,y+1)
 		DirectionsIncludingDiagonal.SW -> utils.Point(x-1,y+1)
 	}
+
+	/**
+	 * Returns whether the point is still in bounds or not
+	 */
+	fun isInBounds(length: Int, height: Int) = x >= 0 && y >= 0 && x < length && y < height
 
 	fun opposite(){
 
