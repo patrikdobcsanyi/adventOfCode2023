@@ -7,7 +7,7 @@ import year2024.challenges.*
 
 object Executor : AbstractExecutor() {
 	override val challenges: List<Day<*, *>>
-		get() = listOf(Day01(), Day02(), Day03(), Day04(), Day05(), Day06())
+		get() = listOf(Day01(), Day02(), Day03(), Day04(), Day05(), Day06(), Day07())
 
 	override val executingMode: ExecutingMode
 		get() = ExecutingMode.ExecuteLast
