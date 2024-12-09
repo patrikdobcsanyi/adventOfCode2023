@@ -40,6 +40,10 @@ class Point(x: Int, y: Int) : Point(x, y) {
 		DirectionsIncludingDiagonal.SW -> utils.Point(x-1,y+1)
 	}
 
+	operator fun minus(other: Point): utils.Point {
+		return utils.Point(x-other.x,y-other.y)
+	}
+
 	/**
 	 * Returns whether the point is still in bounds or not
 	 */
